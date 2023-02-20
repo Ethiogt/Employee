@@ -1,0 +1,40 @@
+﻿<Properties StartupConfiguration="{A7C66B25-25D1-452E-BA44-2E9F9447E2DC}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Employee/Views/Home/Index.cshtml">
+    <Files>
+      <File FileName="Employee/Controllers/HomeController.cs" Line="263" Column="56" />
+      <File FileName="Employee/Views/Home/Index.cshtml" Line="40" Column="67" />
+      <File FileName="Employee/Views/Shared/_Layout.cshtml" />
+      <File FileName="Employee/Program.cs" />
+      <File FileName="Employee/Models/EmployeeModel.cs" />
+      <File FileName="Employee/Views/Home/TakeVacation.cshtml" />
+      <File FileName="Employee/appsettings.json" />
+      <File FileName="Employee/Properties/launchSettings.json" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Employee" expanded="True">
+            <Node name="Employee" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Debugger.DebugSourceFolders />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/aaronkinfe/Projects/Employee/Employee/Controllers/HomeController.cs" relfile="Employee/Controllers/HomeController.cs" line="262" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Employee PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
