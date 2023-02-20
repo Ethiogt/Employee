@@ -1,0 +1,86 @@
+﻿@model Tuple<List<SalariedEmployeeModel>, List<HourlyEmployeeModel>, List<ManagerEmployeeModel>>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <div class="col-md-4">
+        <h5>Employees List</h5>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+
+            @{
+                <table class="table table-sm table-striped table-hover border-bottom">
+                   
+                    <thead>
+                        <tr>
+                            <td> Employee Id </td>
+                            <td> First Name</td>
+                            <td> Last Name</td>
+                            <td> SSN</td>
+                            <td> Employee Type </td>
+                            <td> Worked Days</td>
+                            <td> Vaction used</td>
+                            <td> vacation</td>
+                            <td> Edit</td>
+                            <td> Edit Vacation</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Item1)
+                        {
+
+                            <tr>
+                                <td> @item.employeeId </td>
+                                <td> @item.firstName</td>
+                                <td> @item.lastName</td>
+                                <td> @item.SSN</td>
+                                <td> Salary</td>
+                                <td> @item.numberofWorkedDays</td>
+                                <td> @item.numberofVacationDays</td>
+                                <td> @item.vacation</td>
+                                <td> <a asp-action="Work" asp-route-employeeId="@item.employeeId" asp-route-employeeType="S">Edit</a></td>
+                                <td> <a asp-action="TakeVacation" asp-route-employeeId="@item.employeeId" asp-route-employeeType="S">Vacation</a></td>
+                            </tr>
+
+                        }
+                        @foreach (var item in Model.Item2)
+                        {
+
+                            <tr>
+                                <td> @item.employeeId </td>
+                                <td> @item.firstName</td>
+                                <td> @item.lastName</td>
+                                <td> @item.SSN</td>
+                                <td> Hourly</td>
+                                <td> @item.numberofWorkedDays</td>
+                                <td> @item.numberofVacationDays</td>
+                                <td> @item.vacation</td>
+                                <td> <a asp-action="Work" asp-route-employeeId="@item.employeeId" asp-route-employeeType="H">Edit</a></td>
+                                <td> <a asp-action="TakeVacation" asp-route-employeeId="@item.employeeId" asp-route-employeeType="H">Vacation</a></td>
+                            </tr>
+
+                        }
+                        @foreach (var item in Model.Item3)
+                        {
+
+                            <tr>
+                                <td> @item.employeeId </td>
+                                <td> @item.firstName</td>
+                                <td> @item.lastName</td>
+                                <td> @item.SSN</td>
+                                <td> Manager</td>
+                                <td> @item.numberofWorkedDays</td>
+                                <td> @item.numberofVacationDays</td>
+                                <td> @item.vacation</td>
+                                <td> <a asp-action="Work" asp-route-employeeId="@item.employeeId" asp-route-employeeType="M">Edit</a></td>
+                                <td> <a asp-action="TakeVacation" asp-route-employeeId="@item.employeeId" asp-route-employeeType="M">Vacation</a></td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>

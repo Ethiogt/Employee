@@ -1,0 +1,149 @@
+﻿@model Tuple<SalariedEmployeeModel, HourlyEmployeeModel, ManagerEmployeeModel>
+
+<style></style>
+
+@*@{
+    <table class="table table-sm table-striped table-hover border-bottom">
+        <thead>
+            <tr>
+                <td> Employee Id </td>
+                <td> First Name</td>
+                <td> Last Name</td>
+                <td> SSN</td>
+                <td> Edit</td>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+}*@
+<div class="row">
+    <div class="col-md-6">
+         <h5>Edit Employee Vacation Used Days</h5>
+        <hr />
+        @if (@ViewBag.successMsg != null)
+        {
+            <div class="alert alert-success">
+                <strong>Success!</strong> @ViewBag.successMsg.
+            </div>
+        }
+        @if (@ViewBag.errorMsg != null)
+        {
+            <div class="alert alert-danger">
+                <strong>Error!</strong> @ViewBag.errorMsg.
+            </div>
+        }
+
+        @if (@ViewBag.employeeType == "S")
+        {
+
+    <form asp-action="TakeVacation" asp-route-employeeId="@Model.Item1.employeeId" asp-route-employeeType="@ViewBag.employeeType">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Item1.employeeId" />
+        <div class="form-group">
+            <label asp-for="Item1.firstName" class="control-label"></label>
+            <input asp-for="Item1.firstName" class="form-control" />
+            <span asp-validation-for="Item1.firstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item1.lastName" class="control-label"></label>
+            <input asp-for="Item1.lastName" class="form-control" />
+            <span asp-validation-for="Item1.lastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item1.SSN" class="control-label"></label>
+            <input asp-for="Item1.SSN" class="form-control" />
+            <span asp-validation-for="Item1.SSN" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item1.numberofVacationDays" class="control-label"></label>
+            <input asp-for="Item1.numberofVacationDays" class="form-control" />
+            <span asp-validation-for="Item1.numberofVacationDays" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item1.vacation" class="control-label"></label>
+            <input asp-for="Item1.vacation" disabled="disabled" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+
+        }
+        @if (@ViewBag.employeeType == "H")
+        {
+
+    <form asp-action="TakeVacation" asp-route-employeeId="@Model.Item2.employeeId" asp-route-employeeType="@ViewBag.employeeType">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Item2.employeeId" />
+        <div class="form-group">
+            <label asp-for="Item2.firstName" class="control-label"></label>
+            <input asp-for="Item2.firstName" class="form-control" />
+            <span asp-validation-for="Item2.firstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item2.lastName" class="control-label"></label>
+            <input asp-for="Item2.lastName" class="form-control" />
+            <span asp-validation-for="Item2.lastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item2.SSN" class="control-label"></label>
+            <input asp-for="Item2.SSN" class="form-control" />
+            <span asp-validation-for="Item2.SSN" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item2.numberofVacationDays" class="control-label"></label>
+            <input asp-for="Item2.numberofVacationDays" class="form-control" />
+            <span asp-validation-for="Item2.numberofVacationDays" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item2.vacation" class="control-label"></label>
+            <input asp-for="Item2.vacation" disabled="disabled" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+        }
+        @if (@ViewBag.employeeType == "M")
+        {
+            
+    <form asp-action="TakeVacation" asp-route-employeeId="@Model.Item3.employeeId" asp-route-employeeType="@ViewBag.employeeType">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Item1.employeeId" />
+        <div class="form-group">
+            <label asp-for="Item3.firstName" class="control-label"></label>
+            <input asp-for="Item3.firstName" class="form-control" />
+            <span asp-validation-for="Item1.firstName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item3.lastName" class="control-label"></label>
+            <input asp-for="Item3.lastName" class="form-control" />
+            <span asp-validation-for="Item1.lastName" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item3.SSN" class="control-label"></label>
+            <input asp-for="Item3.SSN" class="form-control" />
+            <span asp-validation-for="Item1.SSN" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item3.numberofVacationDays" class="control-label"></label>
+            <input asp-for="Item3.numberofVacationDays" class="form-control" />
+            <span asp-validation-for="Item3.numberofVacationDays" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Item3.vacation" class="control-label"></label>
+            <input asp-for="Item3.vacation" disabled="disabled" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+            
+        }
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to list</a>
+</div>
